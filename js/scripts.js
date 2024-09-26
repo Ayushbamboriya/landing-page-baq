@@ -51,14 +51,22 @@ document.getElementById("notify-button").addEventListener("click", notifyMe);
 
 // Function to open WhatsApp chat
 function openWhatsApp() {
-    window.open("https://wa.me/1234567890", "_blank");
+    window.open("https://wa.me/+971588165253", "_blank");
 }
 
 // Function to open Instagram page
 function openInstagram() {
-    window.open("https://www.instagram.com", "_blank");
+    window.open("https://www.instagram.com/babalqadr", "_blank");
 }
 
+function openYouTube() {
+    window.open("https://www.youtube.com/@babalqadr", "_blank");
+}
+
+
 // Event listeners for WhatsApp and Instagram
+document.querySelector(".youtube").addEventListener("click", openYouTube);
 document.querySelector(".whatsapp").addEventListener("click", openWhatsApp);
 document.querySelector(".instagram").addEventListener("click", openInstagram);
+document.querySelector(".fab.fa-whatsapp").addEventListener("click", openWhatsApp);
+document.querySelector(".fab.fa-instagram").addEventListener("click", openInstagram);
