@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BAQ</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script> 
+
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preload" href="https://fonts.gstatic.com/s/poppins/v21/pxiEyp8kv8JHgFVrJJfecg.woff2" as="font" type="font/woff2" crossorigin="anonymous">
@@ -17,7 +19,7 @@
     </div>
 
     <div class="image">
-        <img src="images/background-image.jpg">
+        <img src="images/bg.jpg">
     </div>
 
     <section class="main-section">
@@ -26,7 +28,8 @@
             <p>We’re Working Hard to Bring You an Amazing New Experience</p>
 
             <!-- Email form that submits to formsubmit.co -->
-            <form action="https://formsubmit.co/Sales@babalqadr.com" method="POST">
+            <!-- <form action="https://formsubmit.co/Sales@babalqadr.com" method="POST"> -->
+                <form id="myForm">
                 <!-- Prevent spam bots from submitting -->
                 <input type="hidden" name="_honey" style="display:none">
                 <!-- Send the user back to the page after submission -->
@@ -36,8 +39,8 @@
                 
                 <div class="email-container">
                     <input type="email" id="email-input" name="email" placeholder="Enter Your email address" class="email-input" required>
-                   
-                    <button type="button" id="notify-button" class="email-button">Notify me</button>
+                    <!-- <button type="submit" class="email-button">Notify me</button> -->
+                    <button type="submit" class="email-button" id="notify-button">Notify me</button>
 
                 </div>
             </form>
@@ -49,7 +52,10 @@
 
     <!-- Social icons for WhatsApp and Instagram -->
     <div class="social-icons">
-        <a href="https://www.youtube.com/@babalqadr" target="_blank" class="fab fa-youtube whatsapp"></a>
+        <a href="https://www.youtube.com/@babalqadr" target="_blank" class=" youtube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        
         <a href="https://www.instagram.com/babalqadr" target="_blank" class="instagram">
             <i class="fab fa-instagram"></i>
         </a>
@@ -62,5 +68,9 @@
         </a>
     </div>
 
-    <script src="js/scripts.js"></script>
-</body></html>
+    <script type="text/javascript" src="js/scripts.js"></script>
+    
+
+</body>
+
+</html>

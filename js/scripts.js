@@ -42,12 +42,13 @@ function notifyMe() {
 
 // Email validation function
 function validateEmail(email) {
-    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/;
     return re.test(String(email).toLowerCase());
 }
 
 // Event listener for Notify Me button
-document.getElementById("notify-button").addEventListener("click", notifyMe);
+// document.getElementById("notify-button").addEventListener("click", notifyMe);
+
 
 // Function to open WhatsApp chat
 function openWhatsApp() {
@@ -63,10 +64,39 @@ function openYouTube() {
     window.open("https://www.youtube.com/@babalqadr", "_blank");
 }
 
-
 // Event listeners for WhatsApp and Instagram
-document.querySelector(".youtube").addEventListener("click", openYouTube);
-document.querySelector(".whatsapp").addEventListener("click", openWhatsApp);
-document.querySelector(".instagram").addEventListener("click", openInstagram);
+// document.querySelector(".whatsapp").addEventListener("click", openWhatsApp);
+// document.querySelector(".instagram").addEventListener("click", openInstagram);
+document.querySelector(".fab.fa-youtube").addEventListener("click", openYouTube);
+// document.querySelector(".whatsapp").addEventListener("click", openWhatsApp);
+// document.querySelector(".instagram").addEventListener("click", openInstagram);
 document.querySelector(".fab.fa-whatsapp").addEventListener("click", openWhatsApp);
 document.querySelector(".fab.fa-instagram").addEventListener("click", openInstagram);
+
+// Function to send email using EmailJS
+function sendEmail(e) {
+    e.preventDefault(); // Prevent default form submission
+    const errorMessageElement = document.getElementById("error-message");
+    const successMessageElement = document.getElementById("success-message");
+
+    // Send the form data using EmailJS
+    emailjs.sendForm('service_h1aiij9', 'template_sawk31d', this)
+        .then(function() {
+            successMessageElement.style.display = "block";
+            successMessageElement.textContent = "Email submitted successfully!";
+            successMessageElement.style.color = "green"; // Set text color to green
+        }, function(error) {
+            // Log error for debugging
+            console.error('Failed to send email:', error);
+            errorMessageElement.style.display = "block";
+            errorMessageElement.textContent = "Faild to send email. Try again!";
+        });
+}
+
+// Add the event listener for form submission
+document.getElementById('myForm').addEventListener('submit', sendEmail);
+
+// Initialize EmailJS
+(function(){
+    emailjs.init("OPk7Fy1rUG8_UdTVY");
+})();
