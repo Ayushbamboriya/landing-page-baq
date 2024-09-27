@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  overflow: hidden;
 }
 
 img {
@@ -22,6 +23,7 @@ img {
 }
 
 .main-section {
+  height: calc(100vh - 100px);
   height: 90vh;
   display: flex;
   justify-content: flex-start;
